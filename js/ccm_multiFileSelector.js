@@ -4,9 +4,13 @@
 (function(){
 	var $ = jQuery,
 		undefined;
+		
+	if(typeof console === "undefined"){
+		var console = {log:function(){}};
+		console.debug = console.info = console.warn = console.error = console.log;	
+	}
 	
 	var wrapClass = "ccm-multi-file-selector";
-	
 	
 	var ccm_multiFileSelector = {
 		options:{
@@ -114,7 +118,6 @@
 		},
 		takeover_ccm_chooseAsset:function(){
 			//IF THERE ARE ISSUES WITH THE ASSET PICKER COMMUNICATION, LOOK HERE FIRST
-			console.log(typeof(ccm_chooseAsset));
 			var I = this,
 				orig_ccm_chooseAsset = typeof(ccm_chooseAsset)==="undefined" ? false : ccm_chooseAsset;
 			ccm_chooseAsset = function(fileObj){
