@@ -6,18 +6,15 @@
 		undefined;
 		
 	if(typeof console === "undefined"){
-		var console = {log:function(){}};
-		console.debug = console.info = console.warn = console.error = console.log;	
+		var console = {};
+		console.debug = console.info = console.warn = console.error = console.log = function(){};	
 	}
-	
-	var wrapClass = "ccm-multi-file-selector";
 	
 	var ccm_multiFileSelector = {
 		options:{
 			itemList:"ul.items",
 			itemTemplate:"li.template",
-			btnAdd:".add",
-			containment:"parent"
+			btnAdd:"a.add-file"
 		},
 		_init:function(options){
 			var I = this;

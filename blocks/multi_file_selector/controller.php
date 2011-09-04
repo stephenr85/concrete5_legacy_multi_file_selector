@@ -25,7 +25,7 @@
 		function loadMultiFileSelector(){
 			$html = Loader::helper('html');			
 			$mps = Loader::helper('form/multi_file_selector', 'multi_file_selector');
-			$mps->addHeaderAssets($this);
+			$mps->addHeaderItems($this);
 			$this->set('mps', $mps);	
 		}
 		
